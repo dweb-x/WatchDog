@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Diagnostics;
-using System.Threading;
 using System.Windows.Forms;
 using PC = Power.Power;
 using System.Timers;
-
-
 
 namespace WatchDog
 {
@@ -15,6 +11,9 @@ namespace WatchDog
         private int _time = 7200000; //default of 2 hours in miliseconds
         private System.Timers.Timer timer;
 
+        /// <summary>
+        /// 
+        /// </summary>
         private Controller()
         {
             timer = new System.Timers.Timer();
@@ -23,14 +22,20 @@ namespace WatchDog
             timer.AutoReset = false;
         }
 
+        /// <summary>
+        /// Timer callback fires on timeout. Sleeps PC and exits application.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnTimedEvent(object sender, ElapsedEventArgs e)
         {
-            MessageBox.Show("Timed out");
-            //PC.Sleep();
-            Application.Exit();
-            
+            PC.Sleep();
+            Application.Exit();       
         }
 
+        /// <summary>
+        /// Singleton pattern. Returns instance.
+        /// </summary>
         public static Controller Instance
         {
             get { return ctrl ?? (ctrl = new Controller()); }
@@ -39,7 +44,7 @@ namespace WatchDog
         public bool IsActive { get; set; }
 
         /// <summary>
-        /// Timer interval in ms
+        /// Timer interval in ms. Defaults to 1 if value less than 0.
         /// </summary>
         public int Time
         {
@@ -51,23 +56,19 @@ namespace WatchDog
             }
         }
 
-        public void Set()
-        {
-            Start();
-        }
-
-        public void Cancel()
-        {
-            Stop();
-        }
-
-        private void Start()
+        /// <summary>
+        /// Start countdown
+        /// </summary>
+        public void Start()
         {
             timer.Start();
             IsActive = true;
         }
 
-        private void Stop()
+        /// <summary>
+        /// Cancel countdown if active
+        /// </summary>
+        public void Cancel()
         {
             if (IsActive)
             {
@@ -75,13 +76,5 @@ namespace WatchDog
                 IsActive = false;
             }
         }
-
-
-        private static int MinsToMs(int minutes)
-        {
-            return minutes*60*1000;
-        }
-
-
     }
 }

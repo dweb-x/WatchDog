@@ -6,7 +6,7 @@ namespace WatchDog
 {
     public partial class MainUI : Form
     {
-        private Controller ctrl;
+        private readonly Controller ctrl;
         private DateTime offTime;
         private System.Timers.Timer timer;
 
@@ -14,8 +14,7 @@ namespace WatchDog
         {
             InitializeComponent();
             ctrl = Controller.Instance;
-            timer = new System.Timers.Timer();
-            timer.Interval = 100;
+            timer = new System.Timers.Timer {Interval = 100};
             timer.Elapsed += OnTimedEvent;
         }
 
@@ -27,6 +26,9 @@ namespace WatchDog
             }
         }
 
+        /// <summary>
+        /// Called from timer every second. Displays time until shutdown via the timePicker ctrl.
+        /// </summary>
         private void Countdown()
         {
             var interval = offTime.Subtract(DateTime.Now);
@@ -35,30 +37,44 @@ namespace WatchDog
                 );
         }
 
+        /// <summary>
+        /// Toggles between set/reset.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonStart_Click(object sender, EventArgs e)
         {
             if (ctrl.IsActive)
             {
                 ctrl.Cancel();
-                buttonStart.Text = "Activate";
-                timePicker.Value = DateTime.Now;
-                timePicker.Enabled = true;
-                timer.Stop();
+                Reset();
             }
             else
             {          
                 offTime = timePicker.Value;
-                TimeSpan interval = offTime.Subtract(DateTime.Now);
+                var interval = offTime.Subtract(DateTime.Now);
 
+                //Set the sleep time before starting.
                 ctrl.Time = (int)interval.TotalMilliseconds;
-                ctrl.Set();
+                ctrl.Start();
                    
+                Set();
+            }      
+        }
 
-                buttonStart.Text = "Cancel";
-                timePicker.Enabled = false;
-                timer.Start();
-            }
-            
+        private void Reset()
+        {
+            buttonStart.Text = "Activate";
+            timePicker.Value = DateTime.Now;
+            timePicker.Enabled = true;
+            timer.Stop();
+        }
+
+        private void Set()
+        {
+            buttonStart.Text = "Cancel";
+            timePicker.Enabled = false;
+            timer.Start();
         }
 
         private void timePicker_ValueChanged(object sender, EventArgs e)
