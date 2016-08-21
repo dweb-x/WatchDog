@@ -6,3 +6,6 @@ c:\users\dave\documents\visual studio 2012\Projects\WatchDog\WatchDog\obj\Releas
 c:\users\dave\documents\visual studio 2012\Projects\WatchDog\WatchDog\obj\Release\WatchDog.csproj.GenerateResource.Cache
 c:\users\dave\documents\visual studio 2012\Projects\WatchDog\WatchDog\obj\Release\WatchDog.exe
 c:\users\dave\documents\visual studio 2012\Projects\WatchDog\WatchDog\obj\Release\WatchDog.pdb
+c:\users\dave\documents\visual studio 2012\Projects\WatchDog\WatchDog\obj\Release\WatchDog.csprojResolveAssemblyReference.cache
+c:\users\dave\documents\visual studio 2012\Projects\WatchDog\WatchDog\bin\Release\Power.dll
+c:\users\dave\documents\visual studio 2012\Projects\WatchDog\WatchDog\bin\Release\Power.pdb

@@ -30,37 +30,75 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainUI));
             this.buttonStart = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.timePicker = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // buttonStart
             // 
             this.buttonStart.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.buttonStart.Location = new System.Drawing.Point(0, 114);
+            this.buttonStart.Location = new System.Drawing.Point(0, 88);
             this.buttonStart.Name = "buttonStart";
-            this.buttonStart.Size = new System.Drawing.Size(194, 34);
+            this.buttonStart.Size = new System.Drawing.Size(181, 34);
             this.buttonStart.TabIndex = 0;
             this.buttonStart.Text = "Activate";
             this.buttonStart.UseVisualStyleBackColor = true;
             this.buttonStart.Click += new System.EventHandler(this.buttonStart_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 72);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 13);
+            this.label1.TabIndex = 1;
+            // 
+            // timePicker
+            // 
+            this.timePicker.CalendarFont = new System.Drawing.Font("Cross led tfb bold", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
+            this.timePicker.CalendarForeColor = System.Drawing.Color.Red;
+            this.timePicker.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.timePicker.CalendarTitleBackColor = System.Drawing.Color.Green;
+            this.timePicker.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.timePicker.CalendarTrailingForeColor = System.Drawing.Color.Red;
+            this.timePicker.CustomFormat = "hh:mm";
+            this.timePicker.Font = new System.Drawing.Font("Digital-7 Mono", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timePicker.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.timePicker.Location = new System.Drawing.Point(15, 12);
+            this.timePicker.Name = "timePicker";
+            this.timePicker.ShowUpDown = true;
+            this.timePicker.Size = new System.Drawing.Size(154, 42);
+            this.timePicker.TabIndex = 0;
+            this.timePicker.ValueChanged += new System.EventHandler(this.timePicker_ValueChanged);
+            // 
             // MainUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(194, 148);
+            this.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.ClientSize = new System.Drawing.Size(181, 122);
+            this.Controls.Add(this.timePicker);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonStart);
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "MainUI";
+            this.Opacity = 0.85D;
+            this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "WatchDog";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Button buttonStart;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DateTimePicker timePicker;
     }
 }
 

@@ -1,0 +1,5 @@
+c:\Users\Dave\documents\visual studio 2012\Projects\WatchDog\Power\bin\Release\Power.dll
+c:\Users\Dave\documents\visual studio 2012\Projects\WatchDog\Power\bin\Release\Power.pdb
+c:\Users\Dave\documents\visual studio 2012\Projects\WatchDog\Power\obj\Release\Power.csprojResolveAssemblyReference.cache
+c:\Users\Dave\documents\visual studio 2012\Projects\WatchDog\Power\obj\Release\Power.dll
+c:\Users\Dave\documents\visual studio 2012\Projects\WatchDog\Power\obj\Release\Power.pdb
