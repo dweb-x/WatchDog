@@ -29,29 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainUI));
-            this.buttonStart = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.timePicker = new System.Windows.Forms.DateTimePicker();
+            this.buttonStart = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // buttonStart
-            // 
-            this.buttonStart.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.buttonStart.Location = new System.Drawing.Point(0, 88);
-            this.buttonStart.Name = "buttonStart";
-            this.buttonStart.Size = new System.Drawing.Size(181, 34);
-            this.buttonStart.TabIndex = 0;
-            this.buttonStart.Text = "Activate";
-            this.buttonStart.UseVisualStyleBackColor = true;
-            this.buttonStart.Click += new System.EventHandler(this.buttonStart_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 72);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 13);
-            this.label1.TabIndex = 1;
             // 
             // timePicker
             // 
@@ -71,14 +51,24 @@
             this.timePicker.TabIndex = 0;
             this.timePicker.ValueChanged += new System.EventHandler(this.timePicker_ValueChanged);
             // 
+            // buttonStart
+            // 
+            this.buttonStart.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.buttonStart.Location = new System.Drawing.Point(0, 59);
+            this.buttonStart.Name = "buttonStart";
+            this.buttonStart.Size = new System.Drawing.Size(181, 34);
+            this.buttonStart.TabIndex = 0;
+            this.buttonStart.Text = "Activate";
+            this.buttonStart.UseVisualStyleBackColor = true;
+            this.buttonStart.Click += new System.EventHandler(this.buttonStart_Click);
+            // 
             // MainUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(181, 122);
+            this.ClientSize = new System.Drawing.Size(181, 93);
             this.Controls.Add(this.timePicker);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonStart);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -90,15 +80,13 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "WatchDog";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button buttonStart;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker timePicker;
+        private System.Windows.Forms.Button buttonStart;
     }
 }
 

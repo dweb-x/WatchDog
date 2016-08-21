@@ -7,3 +7,5 @@ c:\users\dave\documents\visual studio 2012\Projects\WatchDog\WatchDog\obj\Debug\
 c:\users\dave\documents\visual studio 2012\Projects\WatchDog\WatchDog\obj\Debug\WatchDog.csproj.GenerateResource.Cache
 c:\users\dave\documents\visual studio 2012\Projects\WatchDog\WatchDog\obj\Debug\WatchDog.exe
 c:\users\dave\documents\visual studio 2012\Projects\WatchDog\WatchDog\obj\Debug\WatchDog.pdb
+c:\users\dave\documents\visual studio 2012\Projects\WatchDog\WatchDog\bin\Debug\Power.dll
+c:\users\dave\documents\visual studio 2012\Projects\WatchDog\WatchDog\bin\Debug\Power.pdb
