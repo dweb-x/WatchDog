@@ -1,0 +1,8 @@
+c:\users\dave\documents\visual studio 2012\Projects\WatchDog\WatchDog\bin\Release\WatchDog.exe.config
+c:\users\dave\documents\visual studio 2012\Projects\WatchDog\WatchDog\bin\Release\WatchDog.exe
+c:\users\dave\documents\visual studio 2012\Projects\WatchDog\WatchDog\bin\Release\WatchDog.pdb
+c:\users\dave\documents\visual studio 2012\Projects\WatchDog\WatchDog\obj\Release\WatchDog.MainUI.resources
+c:\users\dave\documents\visual studio 2012\Projects\WatchDog\WatchDog\obj\Release\WatchDog.Properties.Resources.resources
+c:\users\dave\documents\visual studio 2012\Projects\WatchDog\WatchDog\obj\Release\WatchDog.csproj.GenerateResource.Cache
+c:\users\dave\documents\visual studio 2012\Projects\WatchDog\WatchDog\obj\Release\WatchDog.exe
+c:\users\dave\documents\visual studio 2012\Projects\WatchDog\WatchDog\obj\Release\WatchDog.pdb
