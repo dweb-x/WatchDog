@@ -4,8 +4,7 @@ using System.Windows.Forms;
 
 namespace WatchDog
 {
-    public partial class MainUI : Form
-    {
+    public partial class MainUI : Form    {
         private readonly Controller ctrl;
         private DateTime offTime;
         private System.Timers.Timer timer;

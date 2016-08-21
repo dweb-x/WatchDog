@@ -7,51 +7,41 @@ namespace Power
     {
         public static void Shutdown()
         {
-            var process = new Process();
-            process.StartInfo.FileName = @"C:\Windows\System32\shutdown.exe";
-            process.StartInfo.UseShellExecute = false;
-            process.StartInfo.RedirectStandardOutput = true;
-            process.StartInfo.Arguments = "-s";
-            process.Start();
+            Execute(@"C:\Windows\System32\shutdown.exe", "-s");
         }
 
         public static void Reboot()
         {
-            var process = new Process();
-            process.StartInfo.FileName = @"C:\Windows\System32\shutdown.exe";
-            process.StartInfo.UseShellExecute = false;
-            process.StartInfo.RedirectStandardOutput = true;
-            process.StartInfo.Arguments = "-r";
-            process.Start();
+            Execute(@"C:\Windows\System32\shutdown.exe", "-r");
         }
 
         public static void Hibernate()
         {
-            var process = new Process();
-            process.StartInfo.FileName = @"C:\Windows\System32\rundll32.exe";
-            process.StartInfo.UseShellExecute = false;
-            process.StartInfo.RedirectStandardOutput = true;
-            process.StartInfo.Arguments = "powrprof.dll,SetSuspendState Hibernate";
-            process.Start();
+            Execute(@"C:\Windows\System32\rundll32.exe", "powrprof.dll,SetSuspendState Hibernate");
         }
 
         public static void Sleep()
         {
-            var process = new Process();
-            process.StartInfo.FileName = @"C:\Windows\System32\rundll32.exe";
-            process.StartInfo.UseShellExecute = false;
-            process.StartInfo.RedirectStandardOutput = true;
-            process.StartInfo.Arguments = "powrprof.dll,SetSuspendState 0,1,0";
-            process.Start();
+            Execute(@"C:\Windows\System32\rundll32.exe", "powrprof.dll,SetSuspendState 0,1,0");
         }
 
         public static void LogOff()
         {
-            var process = new Process();
-            process.StartInfo.FileName = @"C:\Windows\System32\shutdown.exe";
-            process.StartInfo.UseShellExecute = false;
-            process.StartInfo.RedirectStandardOutput = true;
-            process.StartInfo.Arguments = "-l";
+            Execute(@"C:\Windows\System32\shutdown.exe", "-l");
+        }
+
+        private static void Execute(string filename, string args)
+        {
+            var process = new Process
+            {
+                StartInfo =
+                {
+                    FileName = filename,
+                    UseShellExecute = false,
+                    RedirectStandardOutput = true,
+                    Arguments = args
+                }
+            };
             process.Start();
         }
     }
